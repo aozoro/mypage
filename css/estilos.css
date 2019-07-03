@@ -116,7 +116,7 @@ header .contenedor-texto .texto .profesion {
 
 .main .acerca-de .texto .bold {
 	color: #3895ea;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .main .trabajos {
