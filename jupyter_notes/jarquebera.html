@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13138,13 +13099,13 @@ $$\hat{m}_{r}=\frac{1}{n} \sum_{i=1}^{n} x_{i}^{r} $$</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#momentos respecto al origen</span>
-momentoOrigen<span class="o">&lt;-</span><span class="kr">function</span><span class="p">(</span>x<span class="p">,</span>r<span class="o">=</span><span class="m">1</span><span class="p">){</span>
-  n<span class="o">=</span><span class="kp">length</span><span class="p">(</span>x<span class="p">)</span>
-  suma<span class="o">&lt;-</span><span class="m">0</span>
-  <span class="kr">for</span> <span class="p">(</span>ii <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>n<span class="p">)</span> <span class="p">{</span>
-     suma<span class="o">&lt;-</span>suma<span class="o">+</span><span class="p">(</span>x<span class="p">[</span>ii<span class="p">])</span><span class="o">^</span>r
+<span class="n">momentoOrigen</span><span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="m">1</span><span class="p">){</span>
+  <span class="n">n</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">suma</span><span class="o">&lt;-</span><span class="m">0</span>
+  <span class="nf">for </span><span class="p">(</span><span class="n">ii</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">suma</span><span class="o">&lt;-</span><span class="n">suma</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span><span class="o">^</span><span class="n">r</span>
   <span class="p">}</span>
-  <span class="kr">return</span><span class="p">(</span><span class="kp">round</span><span class="p">(</span>suma<span class="o">/</span>n<span class="p">,</span><span class="m">12</span><span class="p">))</span>
+  <span class="nf">return</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">suma</span><span class="o">/</span><span class="n">n</span><span class="p">,</span><span class="m">12</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -13160,9 +13121,9 @@ momentoOrigen<span class="o">&lt;-</span><span class="kr">function</span><span c
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#ejemplo: el promedio de 1,2,3 deberia salir 2 y su segundo momento central es el promedio de 1,4,9 que sería 14/3</span>
 
-a<span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
-momentoOrigen<span class="p">(</span>a<span class="p">,</span><span class="m">1</span><span class="p">)</span>
-momentoOrigen<span class="p">(</span>a<span class="p">,</span><span class="m">2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+<span class="nf">momentoOrigen</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">momentoOrigen</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13217,14 +13178,14 @@ donde el momento $\hat{\mu}_{1}$ es igual a cero y $\hat{\mu}_{2}$ corresponde a
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#momentos respecto a la media</span>
-momentoMedia<span class="o">&lt;-</span><span class="kr">function</span><span class="p">(</span>x<span class="p">,</span>r<span class="o">=</span><span class="m">2</span><span class="p">){</span>
-  n<span class="o">=</span><span class="kp">length</span><span class="p">(</span>x<span class="p">)</span>
-  media<span class="o">&lt;-</span>momentoOrigen<span class="p">(</span>x<span class="p">,</span><span class="m">1</span><span class="p">)</span>
-  suma<span class="o">&lt;-</span><span class="m">0</span>
-  <span class="kr">for</span> <span class="p">(</span>ii <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>n<span class="p">)</span> <span class="p">{</span>
-    suma<span class="o">&lt;-</span>suma<span class="o">+</span><span class="p">(</span>x<span class="p">[</span>ii<span class="p">]</span><span class="o">-</span>media<span class="p">)</span><span class="o">^</span>r
+<span class="n">momentoMedia</span><span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="m">2</span><span class="p">){</span>
+  <span class="n">n</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">media</span><span class="o">&lt;-</span><span class="nf">momentoOrigen</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+  <span class="n">suma</span><span class="o">&lt;-</span><span class="m">0</span>
+  <span class="nf">for </span><span class="p">(</span><span class="n">ii</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">suma</span><span class="o">&lt;-</span><span class="n">suma</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">-</span><span class="n">media</span><span class="p">)</span><span class="o">^</span><span class="n">r</span>
   <span class="p">}</span>
-  <span class="kr">return</span><span class="p">(</span><span class="kp">round</span><span class="p">(</span>suma<span class="o">/</span>n<span class="p">,</span><span class="m">12</span><span class="p">))</span>
+  <span class="nf">return</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">suma</span><span class="o">/</span><span class="n">n</span><span class="p">,</span><span class="m">12</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -13239,9 +13200,9 @@ momentoMedia<span class="o">&lt;-</span><span class="kr">function</span><span cl
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># ejemplo: las desviaciones son -1,0,1 su primero momento es 0 y el segundo será 2/3</span>
-a<span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
-momentoMedia<span class="p">(</span>a<span class="p">,</span><span class="m">1</span><span class="p">)</span>
-momentoMedia<span class="p">(</span>a<span class="p">,</span><span class="m">2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+<span class="nf">momentoMedia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">momentoMedia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13300,19 +13261,19 @@ $$K=\frac{\hat{\mu}_{4}}{\hat{\mu}_{2}^{2}}=\frac{\frac{1}{n}\sum_{i=1}^{n}\left
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#estadistico JB y su pvalue</span>
-JarqueBera <span class="o">&lt;-</span><span class="kr">function</span><span class="p">(</span>x<span class="p">){</span>
-  n<span class="o">&lt;-</span><span class="kp">length</span><span class="p">(</span>x<span class="p">)</span>
+<span class="n">JarqueBera</span> <span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+  <span class="n">n</span><span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
   
-  mu2<span class="o">&lt;-</span>momentoMedia<span class="p">(</span>x<span class="p">,</span><span class="m">2</span><span class="p">)</span>
-  mu3<span class="o">&lt;-</span>momentoMedia<span class="p">(</span>x<span class="p">,</span><span class="m">3</span><span class="p">)</span>
-  mu4<span class="o">&lt;-</span>momentoMedia<span class="p">(</span>x<span class="p">,</span><span class="m">4</span><span class="p">)</span>
+  <span class="n">mu2</span><span class="o">&lt;-</span><span class="nf">momentoMedia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+  <span class="n">mu3</span><span class="o">&lt;-</span><span class="nf">momentoMedia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+  <span class="n">mu4</span><span class="o">&lt;-</span><span class="nf">momentoMedia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
   
-  S<span class="o">=</span>mu3<span class="o">/</span><span class="p">(</span>mu2<span class="o">^</span><span class="p">(</span><span class="m">3</span><span class="o">/</span><span class="m">2</span><span class="p">))</span>
-  K<span class="o">=</span>mu4<span class="o">/</span><span class="p">(</span>mu2<span class="o">^</span><span class="m">2</span><span class="p">)</span>
+  <span class="n">S</span><span class="o">=</span><span class="n">mu3</span><span class="o">/</span><span class="p">(</span><span class="n">mu2</span><span class="o">^</span><span class="p">(</span><span class="m">3</span><span class="o">/</span><span class="m">2</span><span class="p">))</span>
+  <span class="n">K</span><span class="o">=</span><span class="n">mu4</span><span class="o">/</span><span class="p">(</span><span class="n">mu2</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
   
-  JB <span class="o">&lt;-</span> <span class="p">(</span>n<span class="o">/</span><span class="m">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span>S<span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="p">(</span>K<span class="m">-3</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">4</span><span class="p">)</span>
-  pvalue<span class="o">&lt;-</span><span class="m">1</span><span class="o">-</span>pchisq<span class="p">(</span>JB<span class="p">,</span><span class="m">2</span><span class="p">)</span>
-  <span class="kr">return</span><span class="p">(</span><span class="kt">list</span><span class="p">(</span><span class="s">&quot;statJB&quot;</span><span class="o">=</span>JB<span class="p">,</span><span class="s">&quot;pvalue&quot;</span><span class="o">=</span>pvalue<span class="p">))</span>
+  <span class="n">JB</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="m">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">S</span><span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="p">(</span><span class="n">K</span><span class="m">-3</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">4</span><span class="p">)</span>
+  <span class="n">pvalue</span><span class="o">&lt;-</span><span class="m">1</span><span class="o">-</span><span class="nf">pchisq</span><span class="p">(</span><span class="n">JB</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+  <span class="nf">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;statJB&quot;</span><span class="o">=</span><span class="n">JB</span><span class="p">,</span><span class="s">&quot;pvalue&quot;</span><span class="o">=</span><span class="n">pvalue</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -13329,11 +13290,11 @@ JarqueBera <span class="o">&lt;-</span><span class="kr">function</span><span cla
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#ejemplo </span>
 
 <span class="c1">#Primero creamos 1000 números aleatorios uniformes entre 0 y 1 </span>
-n<span class="o">=</span><span class="m">1000</span>
-vectorUnif <span class="o">&lt;-</span> runif<span class="p">(</span>n<span class="p">)</span>
+<span class="n">n</span><span class="o">=</span><span class="m">1000</span>
+<span class="n">vectorUnif</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
 <span class="c1">#usamos la función inversa de la normal para obtener 1000 números aleatorios de media 10 y varianza 9</span>
-vectorNorm <span class="o">&lt;-</span> qnorm<span class="p">(</span>vectorUnif<span class="p">,</span>mean<span class="o">=</span><span class="m">10</span><span class="p">,</span>sd<span class="o">=</span><span class="m">3</span><span class="p">)</span>
+<span class="n">vectorNorm</span> <span class="o">&lt;-</span> <span class="nf">qnorm</span><span class="p">(</span><span class="n">vectorUnif</span><span class="p">,</span><span class="n">mean</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="n">sd</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13347,7 +13308,7 @@ vectorNorm <span class="o">&lt;-</span> qnorm<span class="p">(</span>vectorUnif<
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#mostramos algunos estadísticos</span>
-<span class="kp">summary</span><span class="p">(</span>vectorNorm<span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">vectorNorm</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13367,7 +13328,7 @@ vectorNorm <span class="o">&lt;-</span> qnorm<span class="p">(</span>vectorUnif<
 
 <div class="output_text output_subarea ">
 <pre>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
- 0.5206  7.8429  9.8311  9.8161 11.7500 20.4225 </pre>
+ -1.111   8.016  10.157  10.104  12.062  19.674 </pre>
 </div>
 
 </div>
@@ -13383,7 +13344,7 @@ vectorNorm <span class="o">&lt;-</span> qnorm<span class="p">(</span>vectorUnif<
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#Mostramos su estadistico Jarque-Bera y pvalue</span>
 
-JarqueBera<span class="p">(</span>vectorNorm<span class="p">)</span>
+<span class="nf">JarqueBera</span><span class="p">(</span><span class="n">vectorNorm</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13403,9 +13364,9 @@ JarqueBera<span class="p">(</span>vectorNorm<span class="p">)</span>
 <div class="output_html rendered_html output_subarea ">
 <dl>
 	<dt>$statJB</dt>
-		<dd>1.07894576716785</dd>
+		<dd>0.177917605922537</dd>
 	<dt>$pvalue</dt>
-		<dd>0.583055509517282</dd>
+		<dd>0.914883263279327</dd>
 </dl>
 
 </div>
@@ -13422,7 +13383,7 @@ JarqueBera<span class="p">(</span>vectorNorm<span class="p">)</span>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#sabemos que el chi crítico es a un 95% de confianza</span>
-qchisq<span class="p">(</span><span class="m">0.95</span><span class="p">,</span>df<span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="nf">qchisq</span><span class="p">(</span><span class="m">0.95</span><span class="p">,</span><span class="n">df</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13453,9 +13414,9 @@ qchisq<span class="p">(</span><span class="m">0.95</span><span class="p">,</span
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Elipsis-de-confianza-del-estad&#237;stico-JB">Elipsis de confianza del estad&#237;stico JB<a class="anchor-link" href="#Elipsis-de-confianza-del-estad&#237;stico-JB">&#182;</a></h2><p>Sea $q$ el valor crítico elegido a partir del cual se empieza a rechazar la hipotesis nula de normalidad. Entonces
-$$\frac{n}{6}\left(S^{2}+\frac{1}{4}(K-3)^{2}\right) &amp;lt; q$$</p>
+$$\frac{n}{6}\left(S^{2}+\frac{1}{4}(K-3)^{2}\right) &lt; q$$</p>
 <p>formando una función conocida
-$$\frac{S^{2}}{6q\,/n}+\frac{(K-3)^{2}}{24q\,/n}&amp;lt;1$$</p>
+$$\frac{S^{2}}{6q\,/n}+\frac{(K-3)^{2}}{24q\,/n}&lt;1$$</p>
 <p>la cual representa una elipse centrada en el origen
 $$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1$$</p>
 <p>Esta centrado en S=0 y K=3, es decir, según un distribución normal. Donde $a=\sqrt{6q/n}$ y $b=\sqrt{24q/n}$ representan los semiejes de la elipse. Todos los puntos dentro de la elipsis serán distribuciones normales según el test de Jarque-Bera.</p>
@@ -13469,28 +13430,28 @@ $$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1$$</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#elipsis de confianza de JB</span>
-n <span class="o">&lt;-</span> <span class="m">1000</span>
-conf <span class="o">&lt;-</span> <span class="m">0.95</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="m">1000</span>
+<span class="n">conf</span> <span class="o">&lt;-</span> <span class="m">0.95</span>
 
-q <span class="o">&lt;-</span> qchisq<span class="p">(</span>conf<span class="p">,</span>df<span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">&lt;-</span> <span class="nf">qchisq</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">df</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 
-a <span class="o">&lt;-</span>  <span class="kp">sqrt</span><span class="p">(</span><span class="m">6</span><span class="o">*</span><span class="kp">q</span><span class="o">/</span>n<span class="p">)</span>
-b <span class="o">&lt;-</span>  <span class="kp">sqrt</span><span class="p">(</span><span class="m">24</span><span class="o">*</span><span class="kp">q</span><span class="o">/</span>n<span class="p">)</span>
+<span class="n">a</span> <span class="o">&lt;-</span>  <span class="nf">sqrt</span><span class="p">(</span><span class="m">6</span><span class="o">*</span><span class="n">q</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">&lt;-</span>  <span class="nf">sqrt</span><span class="p">(</span><span class="m">24</span><span class="o">*</span><span class="n">q</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
 
 
-dominio1 <span class="o">&lt;-</span><span class="kp">seq</span><span class="p">(</span><span class="o">-</span>a<span class="p">,</span>a<span class="p">,</span>length.out <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
-rango1 <span class="o">&lt;-</span> b<span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span>dominio1<span class="o">^</span><span class="m">2</span><span class="o">/</span>a<span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">^</span><span class="m">0.5</span>
+<span class="n">dominio1</span> <span class="o">&lt;-</span><span class="nf">seq</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">length.out</span> <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
+<span class="n">rango1</span> <span class="o">&lt;-</span> <span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">dominio1</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">a</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">^</span><span class="m">0.5</span>
 
 <span class="c1">#contorno</span>
-dominio <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span>dominio1<span class="p">,</span>dominio1<span class="p">[</span><span class="m">200</span><span class="o">:</span><span class="m">1</span><span class="p">])</span>
-rango <span class="o">&lt;-</span> <span class="kt">c</span> <span class="p">(</span>rango1<span class="p">,</span> <span class="o">-</span>rango1<span class="p">[</span><span class="m">200</span><span class="o">:</span><span class="m">1</span><span class="p">])</span>
+<span class="n">dominio</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">dominio1</span><span class="p">,</span><span class="n">dominio1</span><span class="p">[</span><span class="m">200</span><span class="o">:</span><span class="m">1</span><span class="p">])</span>
+<span class="n">rango</span> <span class="o">&lt;-</span> <span class="nf">c </span><span class="p">(</span><span class="n">rango1</span><span class="p">,</span> <span class="o">-</span><span class="n">rango1</span><span class="p">[</span><span class="m">200</span><span class="o">:</span><span class="m">1</span><span class="p">])</span>
 
-x <span class="o">&lt;-</span> runif<span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="o">-</span>a<span class="p">,</span>a<span class="p">)</span>
-y <span class="o">&lt;-</span> runif<span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="o">-</span>b<span class="p">,</span>b<span class="p">)</span>
-data <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="o">=</span>y<span class="p">,</span><span class="s">&quot;x&quot;</span><span class="o">=</span>x<span class="p">)</span>
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="s">&quot;x&quot;</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1">#simulación</span>
-data_sub <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>data<span class="p">,</span> x<span class="o">^</span><span class="m">2</span><span class="o">/</span>a<span class="o">^</span><span class="m">2</span><span class="o">+</span>y<span class="o">^</span><span class="m">2</span><span class="o">/</span>b<span class="o">^</span><span class="m">2</span> <span class="o">&lt;</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">data_sub</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">a</span><span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">b</span><span class="o">^</span><span class="m">2</span> <span class="o">&lt;</span> <span class="m">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13513,15 +13474,15 @@ data_sub <span class="o">&lt;-</span> <span class="kp">subset</span><span class=
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#gráfico</span>
-<span class="kn">library</span><span class="p">(</span><span class="s">&quot;car&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;car&quot;</span><span class="p">)</span>
 
-par<span class="p">(</span>new<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-plot<span class="p">(</span>dominio<span class="p">,</span>rango<span class="p">,</span> type<span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span>asp<span class="o">=</span><span class="m">1</span><span class="p">,</span>axes<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span>xlab<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span>ylab<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span>xlim <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> ylim <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">-0.4</span><span class="p">,</span><span class="m">0.4</span><span class="p">))</span>
-par<span class="p">(</span>new<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-scatterplot<span class="p">(</span>y<span class="o">~</span>x<span class="p">,</span> regLine<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> smooth<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span>xlab<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span>ylab<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> boxplots<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> data<span class="o">=</span>data_sub<span class="p">,</span>asp<span class="o">=</span><span class="m">1</span><span class="p">,</span>cex<span class="o">=</span><span class="m">0.6</span><span class="p">,</span>xlim <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> ylim <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">-0.4</span><span class="p">,</span><span class="m">0.4</span><span class="p">))</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">new</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">dominio</span><span class="p">,</span><span class="n">rango</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span><span class="n">asp</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="n">xlab</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="n">ylab</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-0.4</span><span class="p">,</span><span class="m">0.4</span><span class="p">))</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">new</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">scatterplot</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">x</span><span class="p">,</span> <span class="n">regLine</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="n">xlab</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="n">ylab</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">boxplots</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data_sub</span><span class="p">,</span><span class="n">asp</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">cex</span><span class="o">=</span><span class="m">0.6</span><span class="p">,</span><span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-0.4</span><span class="p">,</span><span class="m">0.4</span><span class="p">))</span>
 
-mtext<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;Platicúrtica&quot;</span><span class="p">,</span> <span class="s">&quot;Asim. Izq.&quot;</span><span class="p">,</span> <span class="s">&quot;Leptocúrtica&quot;</span><span class="p">,</span> <span class="s">&quot;Asim. Der.&quot;</span><span class="p">),</span>
-side <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> col <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">,</span> line <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.5</span><span class="p">),</span> cex <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+<span class="nf">mtext</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Platicúrtica&quot;</span><span class="p">,</span> <span class="s">&quot;Asim. Izq.&quot;</span><span class="p">,</span> <span class="s">&quot;Leptocúrtica&quot;</span><span class="p">,</span> <span class="s">&quot;Asim. Der.&quot;</span><span class="p">),</span>
+<span class="n">side</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.5</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13551,7 +13512,186 @@ side <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,"
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAANlBMVEUAAAAAAP9NTU1oaGh8
+fHyMjIyampqnp6eysrK9vb3Hx8fQ0NDT09PZ2dnh4eHp6enw8PD////iz9LxAAAACXBIWXMA
+ABJ0AAASdAHeZh94AAAgAElEQVR4nO2diXbiSBYFVSyFbbzA//9sWwJsAdrfVWberohzuoe2
+BYrKJEYLElWdASBMlVsA4P8AIQEIICQAAYQEIICQAAQQEoAAQgIQQEgAAggJQAAhAQggJAAB
+hAQggJAABBASgABCAhBASAACCAlAACEBCCAkAAGEBCCAkAAEEBKAAEICEEBIAAIICUAAIQEI
+ICQAAYQEIICQAAQQEoAAQgIQQEgAAggJQAAhAQggJAABhAQggJAABBASgABCAhBASAACCAlA
+ACEBCCAkAAGEBCCAkAAEEBKAAEICEEBIAAIICUAAIQEIICQAAYQEIICQAAQQEoAAQgIQQEgA
+AggJQAAhAQggJAABhAQggJAABBASgABCAhBASAACCAlAACEBCCCkIqjG5uE49Muv6u/zwqMv
+CUoY7SIYe9dvB3//sulYmJCSwmgXwdi7fvj3249ZLwYrwJgXQSykyMKggTEvgvZ7/3VbbV6v
+PzxUm0PzqLos8f277etlscOm2n39PLX5d1WdttX+uvDl57elzsfvnzevBatASEXQCukSwq75
+4cv14S2k3c/vLg83p4eQvp98aIf0s1TzSt+/zPBn+zcgpCL4DelY7U7n06461j/cfJ4/N9Xb
+7fdvvz94qxf7W4dxF9L3D9s/aS/VPInpXgtGtgh+3+H7qm7hVO3rH9bnsY+Xh5ffXX6wqx9+
+1EttHkL6+H2x+t+/Sz2uBsQwskXw+w6vbvz88Pfh0w9+f3gN6eEn7XC+ji87QloNRrYI1g9p
+d3tVWAVGtggeu2g/lIT0t9q+Hr8IaTUY2SJoHyMdf39YH/Ic6+t/7o+R9vUG5u4Y6aM7pIel
+CGk9GNki+H2HN2fmzq+XMwyXk3TNCbyv891Zu9f6fNyhPh+3rV7rs3x3Id0+X/pdqo7yk2Ok
+9WBki+D3wOh6MLP5as5m1w+/k/qupTn11vU50muzTDuky8L3nyMdriv46DOAGIRUBK2Q6qsX
+qr/Xbcr+eiHDx/ZyDvt183tlw3c+zTULL5vvnb92SJeFr1c23Jb6+x3gR7NXCGtASOXCjpgR
+zFW5EJIRzFW5EJIRzFW5EJIRzBWAAEICEEBIAAIICUAAIQEIICQAAYQEIICQAAQQEoAAQgIQ
+QEgAAggJQECCkCoAMxa8y/XhTF7F+/rrDoFfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKC
+XwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9C
+koJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxf
+P0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJf
+DF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KS
+gl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/
+QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8M
+Xz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKC
+XwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9C
+koJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxf
+P0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJf
+DF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KS
+gl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/
+QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8M
+Xz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKC
+XwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9C
+koJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxf
+P0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MXz9CkoJfDF8/QpKCXwxfP0KSgl8MX7/0Ib1u
+q2p/XLgK34EuA/xiFBFS1TxxVzUclq3Cd6DLAL8Y5YR0qA6n8/nrUL0uWoXvQJcBfjHKCWlT
+nerHp2q7aBW+A10G+MUoJ6Sqav3H/FX4DnQZ4BejnJD+3kLaLFqF70CXAX4xCglp//J6rN6+
+H54Ow2cbCGkl8ItRSEgXmoeb06JV+A50GeAXo4iQzp+fr6/7fXPK4TDYESGtBX4xyghJsArf
+gS4D/GIQUiLwi+HrR0hS8Ivh65crJD5HygJ+MRxCqtq8A1jBrp0U/GL4+hGSFPxi+PoRkhT8
+Yvj6JQ3p42XfHAHtDx8LV+E70GWAX4wiQjptW2cTdstW4TvQZYBfjCJCOlSbt8/m0ddxw0Wr
+WcAvRhEhbarPn8ef3EaRBfxiFBHS3UdHfCCbBfxiFBESW6T84BejiJC+j5GOX80jjpFygV+M
+IkK6fRNXw5Yb+3KAX4wyQjp/HJrPkTb7Fz5HygN+MQoJKb4K34EuA/xiEFIi8Ivh60dIUvCL
+4etHSFLwi+HrR0hS8Ivh60dIUvCL4etHSFLwi+HrR0hS8Ivh60dIUvCL4etHSFLwi+HrR0hS
+8Ivh60dIUvCL4etHSFLwi+HrR0hS8Ivh60dIUvCL4etHSFLwi+HrR0hS8Ivh60dIUvCL4etH
+SFLwi+HrR0hS8Ivh60dIUvCL4etHSFLwi+HrR0hS8Ivh60dIUvCL4etHSFLwi+HrR0hS8Ivh
+60dIUor2q6rqvf7K6NweAxQ9fmdCSkapftU1oPf2fxRIqeN3g5ASUaRfK5v3rh8WRJHj14KQ
+ElGg310x732/KIQCx+8OQkpEcX4PsbwP/jY/xY3fA4SUiML8nkJ58isspcLG7wlCSkRRfh37
+bs9+Ze3gFTV+HRBSIkry6yqky6+kkkoavy4IKREF+XWOYbdfOSUVNH6dEFIiyvHrHsIev2JK
+Kmf8uiGkRJTi17e71udXyu5dKePXByElohC/3i56/QopqZDx64WQElGGX38VA2+EIkoqY/z6
+IaREFOE3MEFDfiWUVMT4DUBIiSjBr2/b8ufPn+GQCiiphPEbgpASUYJfX0f1P4N+hDQKISUi
+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
+QmCC"
 >
 </div>
 
