@@ -13099,11 +13099,11 @@ $$\hat{m}_{r}=\frac{1}{n} \sum_{i=1}^{n} x_{i}^{r} $$</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#momentos respecto al origen</span>
-<span class="n">momentoOrigen</span><span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="m">1</span><span class="p">){</span>
-  <span class="n">n</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-  <span class="n">suma</span><span class="o">&lt;-</span><span class="m">0</span>
+<span class="n">momentoOrigen</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="m">1</span><span class="p">){</span>
+  <span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">suma</span> <span class="o">&lt;-</span> <span class="m">0</span>
   <span class="nf">for </span><span class="p">(</span><span class="n">ii</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-     <span class="n">suma</span><span class="o">&lt;-</span><span class="n">suma</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span><span class="o">^</span><span class="n">r</span>
+     <span class="n">suma</span> <span class="o">&lt;-</span> <span class="n">suma</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span><span class="o">^</span><span class="n">r</span>
   <span class="p">}</span>
   <span class="nf">return</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">suma</span><span class="o">/</span><span class="n">n</span><span class="p">,</span><span class="m">12</span><span class="p">))</span>
 <span class="p">}</span>
@@ -13121,7 +13121,7 @@ $$\hat{m}_{r}=\frac{1}{n} \sum_{i=1}^{n} x_{i}^{r} $$</p>
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#ejemplo: el promedio de 1,2,3 deberia salir 2 y su segundo momento central es el promedio de 1,4,9 que sería 14/3</span>
 
-<span class="n">a</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
 <span class="nf">momentoOrigen</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
 <span class="nf">momentoOrigen</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
@@ -13178,12 +13178,12 @@ donde el momento $\hat{\mu}_{1}$ es igual a cero y $\hat{\mu}_{2}$ corresponde a
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#momentos respecto a la media</span>
-<span class="n">momentoMedia</span><span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="m">2</span><span class="p">){</span>
-  <span class="n">n</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-  <span class="n">media</span><span class="o">&lt;-</span><span class="nf">momentoOrigen</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
-  <span class="n">suma</span><span class="o">&lt;-</span><span class="m">0</span>
+<span class="n">momentoMedia</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="m">2</span><span class="p">){</span>
+  <span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">media</span> <span class="o">&lt;-</span> <span class="nf">momentoOrigen</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+  <span class="n">suma</span> <span class="o">&lt;-</span> <span class="m">0</span>
   <span class="nf">for </span><span class="p">(</span><span class="n">ii</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">suma</span><span class="o">&lt;-</span><span class="n">suma</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">-</span><span class="n">media</span><span class="p">)</span><span class="o">^</span><span class="n">r</span>
+    <span class="n">suma</span> <span class="o">&lt;-</span> <span class="n">suma</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">-</span><span class="n">media</span><span class="p">)</span><span class="o">^</span><span class="n">r</span>
   <span class="p">}</span>
   <span class="nf">return</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">suma</span><span class="o">/</span><span class="n">n</span><span class="p">,</span><span class="m">12</span><span class="p">))</span>
 <span class="p">}</span>
@@ -13200,7 +13200,7 @@ donde el momento $\hat{\mu}_{1}$ es igual a cero y $\hat{\mu}_{2}$ corresponde a
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># ejemplo: las desviaciones son -1,0,1 su primero momento es 0 y el segundo será 2/3</span>
-<span class="n">a</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
 <span class="nf">momentoMedia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
 <span class="nf">momentoMedia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
@@ -13262,14 +13262,14 @@ $$K=\frac{\hat{\mu}_{4}}{\hat{\mu}_{2}^{2}}=\frac{\frac{1}{n}\sum_{i=1}^{n}\left
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#estadistico JB y su pvalue</span>
 <span class="n">JarqueBera</span> <span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
-  <span class="n">n</span><span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
   
-  <span class="n">mu2</span><span class="o">&lt;-</span><span class="nf">momentoMedia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
-  <span class="n">mu3</span><span class="o">&lt;-</span><span class="nf">momentoMedia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
-  <span class="n">mu4</span><span class="o">&lt;-</span><span class="nf">momentoMedia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
+  <span class="n">mu2</span> <span class="o">&lt;-</span> <span class="nf">momentoMedia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+  <span class="n">mu3</span> <span class="o">&lt;-</span> <span class="nf">momentoMedia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+  <span class="n">mu4</span> <span class="o">&lt;-</span> <span class="nf">momentoMedia</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
   
-  <span class="n">S</span><span class="o">=</span><span class="n">mu3</span><span class="o">/</span><span class="p">(</span><span class="n">mu2</span><span class="o">^</span><span class="p">(</span><span class="m">3</span><span class="o">/</span><span class="m">2</span><span class="p">))</span>
-  <span class="n">K</span><span class="o">=</span><span class="n">mu4</span><span class="o">/</span><span class="p">(</span><span class="n">mu2</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+  <span class="n">S</span> <span class="o">&lt;-</span> <span class="n">mu3</span><span class="o">/</span><span class="p">(</span><span class="n">mu2</span><span class="o">^</span><span class="p">(</span><span class="m">3</span><span class="o">/</span><span class="m">2</span><span class="p">))</span>
+  <span class="n">K</span> <span class="o">&lt;-</span> <span class="n">mu4</span><span class="o">/</span><span class="p">(</span><span class="n">mu2</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
   
   <span class="n">JB</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="m">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">S</span><span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="p">(</span><span class="n">K</span><span class="m">-3</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">4</span><span class="p">)</span>
   <span class="n">pvalue</span><span class="o">&lt;-</span><span class="m">1</span><span class="o">-</span><span class="nf">pchisq</span><span class="p">(</span><span class="n">JB</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
@@ -13290,7 +13290,7 @@ $$K=\frac{\hat{\mu}_{4}}{\hat{\mu}_{2}^{2}}=\frac{\frac{1}{n}\sum_{i=1}^{n}\left
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#ejemplo </span>
 
 <span class="c1">#Primero creamos 1000 números aleatorios uniformes entre 0 y 1 </span>
-<span class="n">n</span><span class="o">=</span><span class="m">1000</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="m">1000</span>
 <span class="n">vectorUnif</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
 <span class="c1">#usamos la función inversa de la normal para obtener 1000 números aleatorios de media 10 y varianza 9</span>
@@ -13462,7 +13462,8 @@ $$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1$$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>En el gráfico vemos que a la izquierda del eje y donde los valores de x son negativos significan asimetria hacia la izquierda y la derecha del eje y signifca asimetria a la derecha. De manera análoga arriba del eje x quiere decir que K&gt;3 y además es leptocúrtica y si esta abajo del eje x es platicúrtica.</p>
+<p>En el gráfico, vemos que a la izquierda del eje-$y$ donde los valores de $x$ son negativos significan asimetria hacia la izquierda y la derecha del eje-$y$ signifcan asimetria a la derecha.</p>
+<p>De manera análoga arriba del eje-$x$ quiere decir que $K&gt;3$, es decir, es leptocúrtica y si esta abajo del eje-$x$ es platicúrtica.</p>
 <p>La elipse indica la tolerancia de de asimetria y curtosis para seguir siendo considera una distribución normal</p>
 
 </div>
@@ -13715,7 +13716,7 @@ $$ S= \frac{12q}{n}$$</p>
 $$
 \frac{a}{b}=\frac{\sqrt{6q\,/n}}{\sqrt{24q\,/n}}=\frac{1}{2}
 $$</p>
-<p>la razón de los semiejes siempre será de 1 a 2 independimente del nivel de confianza y el tamaño de muestra. También podemos notar que el test de Jarque-Bera tolera más la curtosis que la asimetría</p>
+<p>la razón de los semiejes siempre será de 1 a 2 independimente del nivel de confianza y el tamaño de muestra. También podemos notar que el test de Jarque-Bera tolera más la curtosis que la asimetría.</p>
 
 </div>
 </div>
